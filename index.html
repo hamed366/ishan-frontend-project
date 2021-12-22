@@ -10,8 +10,12 @@
 </head>
 
 <body class="center">
-  <div class="container">
-    <div class="username-container">
+  <div id="root">
+
+  </div>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <!-- <div class="username-container">
       <div class="img">
         <img class="username-img" src="./img/person-icon.png" alt="">
       </div>
@@ -48,9 +52,115 @@
         <img class="share-icon" src="./img/share.png" alt="">
       </div>
     </div>
-  </div>
+  </div> -->
+
+
+  <script>
+    // function div(children) {
+    //   return React.createElement(
+    //     'div',
+    //     { 'className': 'cool' },
+    //     React.createElement('h1', { 'data-all': 'cool' }, 'hello world'),
+    //   );
+    // }
+
+
+
+    const img = React.createElement('img', { className: 'username-img', src: './img/person-icon.png' })
+    const divImg = React.createElement('div', { className: 'img' }, img)
+
+    const name = React.createElement('h3', { children: 'Name', className: 'name' })
+    const usernameSet = React.createElement('h4', { children: '@Username', className: 'username-set' })
+    const username = React.createElement('div', { className: 'username' }, name, usernameSet)
+    const usernameContainer = React.createElement('div', { className: 'username-container' }, divImg, username);
+
+    const p = React.createElement('p', { children: 'Your tweet here!', className: 'tweet-p' })
+    const tweet = React.createElement('div', { className: 'tweet' }, p);
+
+
+
+    let now = new Date();
+    let hour = now.toLocaleTimeString();
+    let day = now.getUTCDate();
+    let month = now.getUTCMonth();
+    let year = now.getUTCFullYear()
+
+    switch (month) {
+      case 0:
+        month = 'Jan';
+        break;
+      case 1:
+        month = 'Feb';
+        break;
+      case 2:
+        month = 'Mar';
+        break;
+      case 3:
+        month = 'Apr';
+        break;
+      case 4:
+        month = 'May';
+        break;
+      case 5:
+        month = 'Jun';
+        break;
+      case 6:
+        month = 'Jul';
+        break;
+      case 7:
+        month = 'Aug';
+        break;
+      case 8:
+        month = 'Sep';
+        break;
+      case 9:
+        month = 'Oct';
+        break;
+      case 10:
+        month = 'Nov';
+        break;
+      case 11:
+        month = 'Dec';
+        break;
+    }
+
+    let str = hour + " . " + month + " " + day + " " + year;
+    const time = React.createElement('div', { children: str, className: 'time' });
+
+    const arrowIcon = React.createElement('img', { className: 'arrow-icon', src: './img/arrow.png' })
+    const arrow = React.createElement('div', { className: 'arrow' }, arrowIcon);
+
+
+    const h4 = React.createElement('h3', { children: '44' });
+    const commentIcon = React.createElement('img', { className: 'comment-icon', src: './img/Vector.png' })
+    const comment = React.createElement('div', { className: 'comment' }, commentIcon, h4);
+
+    const h3 = React.createElement('h3', { children: '3' });
+    const retweetIcon = React.createElement('img', { className: 'retweet-icon', src: './img/retweet.png' })
+    const retweet = React.createElement('div', { className: 'retweet' }, retweetIcon, h3);
+
+    const h31 = React.createElement('h3', { children: '3500' });
+    const likeIcon = React.createElement('img', { className: 'like-icon', src: './img/heart.png' })
+    const like = React.createElement('div', { className: 'like' }, likeIcon, h31);
+
+
+    const shareIcon = React.createElement('img', { className: 'share-icon', src: './img/share.png' })
+    const share = React.createElement('div', { className: 'like' }, shareIcon);
+
+
+
+    const iconsContainer = React.createElement('div', { className: 'icons-container' }, comment, retweet, like, share);
+
+    const container = React.createElement('div', { className: 'container' }, usernameContainer, tweet, time, arrow, iconsContainer);
+    const root = document.getElementById('root');
+    ReactDOM.render(container, root);
+
+
+
+  </script>
+
 
 </body>
-<script src="index.js"></script>
+
 
 </html>
