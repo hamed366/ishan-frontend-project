@@ -1,15 +1,15 @@
 
 // comment.addEventListener('click', () => {
-//   console.log('You clicked on comment')
+//     console.log('You clicked on comment')
 // });
 // retweet.addEventListener('click', () => {
-//   console.log('You clicked on retweet')
+//     console.log('You clicked on retweet')
 // });
 // like.addEventListener('click', () => {
-//   console.log('You clicked on like')
+//     console.log('You clicked on like')
 // });
 // share.addEventListener('click', () => {
-//   console.log('You clicked on share')
+//     console.log('You clicked on share')
 // });
 
 
